@@ -1,16 +1,18 @@
+const KV_REST_API_URL=import.meta.env.KV_REST_API_URL;
+const KV_REST_API_TOKEN=import.meta.env.KV_REST_API_TOKEN;
 export async function setKey(key, value) {
-    return await fetch(`${process.env.KV_REST_API_URL}/set/${key}`, {
+    return await fetch(`${KV_REST_API_URL}/set/${key}`, {
         headers: {
-            Authorization: `Bearer ${process.env.KV_REST_API_TOKEN}`,
+            Authorization: `Bearer ${KV_REST_API_TOKEN}`,
         },
         body: value,
         method: 'POST'
     })
 }
 export async function getKey(key) {
-    const response = await fetch(`${process.env.KV_REST_API_URL}/get/${key}`, {
+    const response = await fetch(`${KV_REST_API_URL}/get/${key}`, {
         headers: {
-            Authorization: `Bearer  ${process.env.KV_REST_API_TOKEN}`,
+            Authorization: `Bearer  ${KV_REST_API_TOKEN}`,
         },
         method: 'POST'
     })
