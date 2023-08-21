@@ -11,7 +11,7 @@ const copyShort = () => {
   const short = generateShortUrl();
   //存入key
   setKey(short, inputUrl.value)
-  const text = getRootUrl() + "/" + short;
+  const text = getRootUrl() + "/show/" + short;
   copyText(text)
   $toast.open({
     message: "网址复制成功！",

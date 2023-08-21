@@ -9,7 +9,7 @@ const routes = [
         component: HelloWorld
     },
     {
-        path: '/:url',
+        path: '/show/:url',
         name: 'show',
         component: ShowWeb
     }
