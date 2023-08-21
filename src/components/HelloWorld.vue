@@ -1,14 +1,26 @@
 <script setup>
 import { ref } from 'vue'
-import { getRootUrl, generateShortUrl, isURL ,setKey,getKey} from '../api/index'
+import { getRootUrl, generateShortUrl, isURL, setKey, getKey } from '../api/index'
 const inputUrl = ref()
 const copyShort = () => {
-  console.log(inputUrl.value);
   if (!isURL(inputUrl.value)) return;
   const short = generateShortUrl();
-  console.log(typeof inputUrl.value);
-  setKey(short, inputUrl.value)
-  console.log(getRootUrl() + "/" + short);
+  //存入key
+  // setKey(short, inputUrl.value)
+  const text=getRootUrl() + "/" + short;
+
+  copyText(text)
+}
+
+
+const copyText = (text) => {
+  navigator.clipboard.writeText(text)
+    .then(() => {
+      console.log('文本已复制到剪贴板');
+    })
+    .catch((error) => {
+      console.error('复制失败:', error);
+    });
 }
 </script>
 
