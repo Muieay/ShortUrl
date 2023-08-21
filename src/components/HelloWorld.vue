@@ -1,17 +1,24 @@
 <script setup>
 import { ref } from 'vue'
-import { getRootUrl, generateShortUrl, isURL, setKey, getKey } from '../api/index'
+import { getRootUrl, generateShortUrl, isURL, setKey} from '../api/index'
+import { useToast } from 'vue-toast-notification';
+import 'vue-toast-notification/dist/theme-sugar.css';
+const $toast = useToast();
+
 const inputUrl = ref()
 const copyShort = () => {
   if (!isURL(inputUrl.value)) return;
   const short = generateShortUrl();
   //存入key
-  // setKey(short, inputUrl.value)
-  const text=getRootUrl() + "/" + short;
-
+  setKey(short, inputUrl.value)
+  const text = getRootUrl() + "/" + short;
   copyText(text)
+  $toast.open({
+    message: "网址复制成功！",
+    position: "bottom",
+    queue: true
+  })
 }
-
 
 const copyText = (text) => {
   navigator.clipboard.writeText(text)
@@ -22,6 +29,20 @@ const copyText = (text) => {
       console.error('复制失败:', error);
     });
 }
+
+// 防抖函数
+function debounce(func, delay) {
+  let timerId;
+  return function (...args) {
+    clearTimeout(timerId);
+    timerId = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+}
+
+// 添加防抖功能的 copyShort 方法
+const debouncedCopyShort = debounce(copyShort, 500); // 设置延迟时间为 500 毫秒
 </script>
 
 <template>
@@ -32,7 +53,7 @@ const copyText = (text) => {
       <label>网址输入</label>
     </div>
     <div class="btn-box">
-      <a href="#" class="btn" @click="copyShort">Copy Short URL</a>
+      <a href="#" class="btn" @click="debouncedCopyShort">Copy Short URL</a>
     </div>
   </div>
 </template>

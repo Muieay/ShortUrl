@@ -4,14 +4,13 @@ import { getKey } from '../api';
 const route = useRoute()
 const url = route.params.url
 getKey(url).then(res => {
+    console.log(res);
     if (res.result == null) {
         window.location.replace('/')
     } else {
         window.location.replace(res.result)
     }
-
 })
-
 </script>
 
 <template>

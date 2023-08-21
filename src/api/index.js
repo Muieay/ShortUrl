@@ -12,7 +12,7 @@ export async function setKey(key, value) {
 export async function getKey(key) {
     const response = await fetch(`${KV_REST_API_URL}/get/${key}`, {
         headers: {
-            Authorization: `Bearer  ${KV_REST_API_TOKEN}`,
+            Authorization: `Bearer ${KV_REST_API_TOKEN}`,
         },
         method: 'POST'
     })
