@@ -9,8 +9,13 @@ const routes = [
         component: HelloWorld
     },
     {
-        path: '/:url',
+        path: '/show',
         name: 'show',
+        component: ShowWeb
+    },
+    {
+        path: '/:url',
+        name: 'url',
         component: ShowWeb,
         props: true
     }
