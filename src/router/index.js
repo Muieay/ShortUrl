@@ -9,15 +9,29 @@ const routes = [
         component: HelloWorld
     },
     {
-        path: '/show/:url',
+        path: '/:url',
         name: 'show',
-        component: ShowWeb
+        component: ShowWeb,
+        props: true
     }
 ]
 
 const router = createRouter({
     history: createWebHistory(),
     routes
+})
+
+router.beforeEach(async(to, from, next)=>{
+    if(to.path==='/'){
+        next()
+    }else{
+        router.addRoute({
+            path: to.path,
+            component: ShowWeb
+        })
+        next()
+    }
+
 })
 
 
