@@ -3,13 +3,7 @@ import { useRoute } from 'vue-router'
 import { getKey } from '../api';
 const route = useRoute()
 
-props: ['url']
-
-
 const url = route.params.url
-
-console.log(url);
-
 getKey(url).then(res => {
     console.log(res);
     if (res.result == null) {
