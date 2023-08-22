@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { getRootUrl, generateShortUrl, isURL, setKey} from '../api/index'
+import { getRootUrl, generateShortUrl, isURL, setKey } from '../api/index'
 import { useToast } from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-sugar.css';
 const $toast = useToast();
@@ -11,22 +11,27 @@ const copyShort = () => {
   const short = generateShortUrl();
   //存入key
   setKey(short, inputUrl.value)
-  const text = getRootUrl() + "/" + short;
+  const text = getRootUrl() + "/#/" + short;
   copyText(text)
-  $toast.open({
-    message: "网址复制成功！",
-    position: "bottom",
-    queue: true
-  })
 }
 
 const copyText = (text) => {
   navigator.clipboard.writeText(text)
     .then(() => {
-      console.log('文本已复制到剪贴板');
+      $toast.open({
+        message: "网址复制成功！",
+        position: "bottom",
+        queue: true
+      })
     })
     .catch((error) => {
-      console.error('复制失败:', error);
+      console.error();
+      $toast.open({
+        type: "error",
+        message: "复制失败!",
+        position: "bottom",
+        queue: true
+      })
     });
 }
 
