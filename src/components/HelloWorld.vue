@@ -56,7 +56,7 @@ const debouncedCopyShort = debounce(copyShort, 500); // 设置延迟时间为 50
       <a href="#" class="btn" @click="debouncedCopyShort">Copy Short URL</a>
     </div>
   </div>
-  <router-link to="/show/hello"></router-link>
+  <router-link to="/show/hello">Hello</router-link>
 </template>
 
 <style scoped>
