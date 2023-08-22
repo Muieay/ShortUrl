@@ -1,11 +1,15 @@
-
-
 <div align="center">
-    <h1 align="center">Short URL Generator</h1>
-    <p>No need for servers, deploy quickly | <a href="https://short-url-jade.vercel.app">Demo</a></p>
-    English / [简体中文](./README_CN.md) 
-    [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/Muieay/ShortUrl)
+<h1 align="center">Short URL Generator</h1>
+<p>No need for servers, deploy quickly | <a href="https://short-url-jade.vercel.app">Demo</a></p>
+
+English / [简体中文](./README_CN.md) 
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/Muieay/ShortUrl)
+
 </div>
+
+
+
 
 ## Getting started
 
