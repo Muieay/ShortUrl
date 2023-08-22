@@ -1,3 +1,6 @@
-git add .
-git commit -m "update"
-git push
+@echo off
+call git add .
+call git commit -m "update"
+call git pull
+call git push
+pause
