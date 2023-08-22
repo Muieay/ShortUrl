@@ -22,6 +22,7 @@ const router = createRouter({
 })
 
 router.beforeEach(async(to, from, next)=>{
+    console.log(to.path);
     if(to.path==='/'){
         next()
     }else{
