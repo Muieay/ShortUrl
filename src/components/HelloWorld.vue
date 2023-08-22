@@ -25,7 +25,7 @@ const copyText = (text) => {
       })
     })
     .catch((error) => {
-      console.error();
+      console.error('复制失败:', error);
       $toast.open({
         type: "error",
         message: "复制失败!",

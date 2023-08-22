@@ -9,11 +9,6 @@ const routes = [
         component: HelloWorld
     },
     {
-        path: '/show',
-        name: 'show',
-        component: ShowWeb
-    },
-    {
         path: '/:url',
         name: 'url',
         component: ShowWeb,
@@ -37,7 +32,6 @@ router.beforeEach(async(to, from, next)=>{
         })
         next()
     }
-
 })
 
 
