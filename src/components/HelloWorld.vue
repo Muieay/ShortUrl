@@ -178,4 +178,17 @@ const debouncedCopyShort = debounce(copyShort, 500); // 设置延迟时间为 50
   transform: scaleX(1.4) scaleY(1.5);
   opacity: 0;
 }
+
+@media (width <=30em) {
+  .wrapper {
+    width: 290px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-box {
+    width: 260px;
+    height: 50px;
+  }
+}
 </style>

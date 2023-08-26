@@ -5,7 +5,6 @@ const route = useRoute()
 
 const url = route.params.url
 getKey(url).then(res => {
-    console.log(res);
     if (res.result == null) {
         window.location.replace('/')
     } else {

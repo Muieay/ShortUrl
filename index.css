@@ -1,18 +1,6 @@
 * {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    /* 这个是告诉浏览器：你想要设置的边框和内边距的值是包含在总宽高内的 */
-    box-sizing: border-box;
-  }
-
-  body {
-    /* 弹性布局 水平垂直居中 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* 设置body最小高度为100%窗口高度 */
-    min-height: 100vh;
-    /* 渐变背景 */
-    background: linear-gradient(200deg, #44fce1, #f383de);
-  }
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
