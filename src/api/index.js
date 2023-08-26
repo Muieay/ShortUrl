@@ -1,5 +1,6 @@
 const KV_REST_API_URL=import.meta.env.KV_REST_API_URL;
 const KV_REST_API_TOKEN=import.meta.env.KV_REST_API_TOKEN;
+//设置Key
 export async function setKey(key, value) {
     return await fetch(`${KV_REST_API_URL}/set/${key}`, {
         headers: {
@@ -9,6 +10,7 @@ export async function setKey(key, value) {
         method: 'POST'
     })
 }
+//获取Key-Value
 export async function getKey(key) {
     const response = await fetch(`${KV_REST_API_URL}/get/${key}`, {
         headers: {
@@ -20,8 +22,6 @@ export async function getKey(key) {
     return data
 }
 
-
-
 //当前根路径
 export function getRootUrl() {
     var protocol = window.location.protocol;
@@ -32,7 +32,7 @@ export function getRootUrl() {
 //生成短网址
 export function generateShortUrl() {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    const length = 6; // 生成的短网址长度
+    const length = 3; // 生成的短网址长度
     let shortUrl = '';
     for (let i = 0; i < length; i++) {
         const randomIndex = Math.floor(Math.random() * characters.length);
