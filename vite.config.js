@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  envPrefix: 'KV_',
+  envPrefix: 'SHORT_',
   server:{
     historyApiFallback: true
   }

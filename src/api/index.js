@@ -1,5 +1,5 @@
-const KV_REST_API_URL=import.meta.env.KV_REST_API_URL;
-const KV_REST_API_TOKEN=import.meta.env.KV_REST_API_TOKEN;
+const KV_REST_API_URL=import.meta.env.SHORT_KV_REST_API_URL;
+const KV_REST_API_TOKEN=import.meta.env.SHORT_KV_REST_API_TOKEN;
 //设置Key
 export async function setKey(key, value) {
     return await fetch(`${KV_REST_API_URL}/set/${key}`, {
